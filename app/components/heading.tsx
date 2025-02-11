@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Heading() {
   return (
     <section className="heading container">
-      <span className="heading-summary">
+      <span className="summary">
         Effizient lernen, leicht bestehen
       </span>
       <h1>Mit AI zum Lernerfolg</h1>

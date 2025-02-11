@@ -1,13 +1,47 @@
 @import "bootstrap.scss";
 
+/* Typography */
+
+body, html {
+  font-size: 16px;
+  background-color: #080A35;
+  color: #FFFFFF;
+}
+
+.summary {
+  color: #1569FF;
+  text-align: center;
+  font-family: "Wix Madefor Text", Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.165px;
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  font-size: 5.125rem;
+  font-family: "SF Pro", Helvetica, sans-serif;
+}
+
 /* Header */
+
+.heading {
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #f6f6f6;
+  background-color: #0f1249;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 #logo {
@@ -32,7 +66,6 @@ header {
 
 #nav ul li a {
   text-decoration: none;
-  color: black;
 }
 
 #nav ul li a:hover {
@@ -44,9 +77,13 @@ main {
   min-height: calc(100vh - 5rem);
 }
 
+section {
+  margin-bottom: 15.625rem;
+}
+
 /* Footer */
 footer {
-  background-color: #F6F6F6;
+  background-color: #0f1249;
   padding: 3rem 0;
   text-align: center;
 }
