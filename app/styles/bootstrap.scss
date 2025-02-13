@@ -1,4 +1,6 @@
 // Override Bootstrap variables
+
+/* grid */
 $enable-grid-classes: false;
 $enable-cssgrid: true;
 
@@ -21,7 +23,25 @@ $container-max-widths: (
         xxxl: 1420px
 ) !default;
 
+/* colors */
 $primary: #1569FF;
+
+/* buttons */
+$border-radius: 3rem;
+$border-radius-lg: 3rem;
+$border-radius-sm: 3rem;
+$btn-font-weight: 600;
+
+// Change small button height
+$btn-padding-y-sm: 0.6rem; // Vertical padding
+$btn-padding-x-sm: 1.75rem; // Horizontal padding
+$btn-font-size-sm: 1rem; // Font size
+
+// Change large button height
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 1.75rem;
+$btn-font-size-lg: 1.125rem;
+
 
 
 // Import Bootstrap SCSS

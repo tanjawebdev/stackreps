@@ -2,42 +2,74 @@
 
 /* Typography */
 
+@font-face {
+  font-family: 'Wix Madefor Text';
+  src: url('/fonts/wix-madefor-text/wix-madefor-text-v13-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wix Madefor Text';
+  src: url('/fonts/wix-madefor-text/wix-madefor-text-v13-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/poppins-v22-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 body, html {
   font-size: 16px;
+  font-weight: 400;
   background-color: #080A35;
   color: #FFFFFF;
+  font-family: 'Wix Madefor Text', Helvetica, sans-serif;
 }
 
 .summary {
   color: #1569FF;
   text-align: center;
-  font-family: "Wix Madefor Text", Helvetica, sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: -0.165px;
   text-transform: uppercase;
+  display: block;
+}
+
+.subtitle {
+  opacity: 0.6;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 h1, .h1 {
-  font-size: 5.125rem;
-  font-family: "SF Pro", Helvetica, sans-serif;
+  font-size: 4.625rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", Helvetica, sans-serif;
 }
+
+@supports (font-family: -apple-system) {
+  h1, .h1 {
+    font-size: 5.3rem;
+  }
+}
+
 
 /* Header */
-
-.heading {
-  margin-top: 50vh;
-  transform: translateY(-50%);
-}
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #0f1249;
   position: absolute;
   top: 0;
   left: 0;

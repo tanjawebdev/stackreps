@@ -1,0 +1,22 @@
+.heading {
+  mix-blend-mode: plus-lighter;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.heading .summary {
+  margin-bottom: 2rem;
+  margin-top: -8rem;
+}
+
+.heading .subtitle {
+  margin-bottom: 4rem;
+}
+
+.heading .register {
+  margin-right: 1rem;
+}
