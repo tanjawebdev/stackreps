@@ -68,6 +68,7 @@ body, html {
 h1, .h1 {
   @include h1-font-family;
   font-size: 4.625rem;
+  line-height: 1em;
 }
 
 @supports (font-family: -apple-system) {
