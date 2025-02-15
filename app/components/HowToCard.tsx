@@ -1,20 +1,32 @@
 import React from "react";
-import {ArrowIcon} from "./svgIcons";
+import { pdf, calender, cards } from "./svgIcons";
+import styles from "../styles/HowToCard.module.scss";
+
+const iconMap: { [key: string]: React.FC } = {
+    pdf: pdf,
+    calender: calender,
+    cards: cards
+};
 
 interface HowToCardProps {
-    icon?: string;
+    icon?: "pdf" | "calender" | "cards";
     headline: string;
     description: string;
 }
 
 export default function HowToCard(probs: HowToCardProps ) {
-  return (
-    <div className="howToCard g-col-md-4">
-        {probs.icon}
-        <h3>{probs.headline}</h3>
-        <p>{probs.description}</p>
+    const IconComponent = probs.icon ? iconMap[probs.icon] : null;
 
-        <ArrowIcon />
-    </div>
-  )
+    return (
+        <div className={styles.howToCard + " g-col-md-4"}>
+            {IconComponent && (
+                <div className={styles.icon}>
+                    <IconComponent/>
+                </div>
+            )}
+            <h3>{probs.headline}</h3>
+            <hr/>
+            <p>{probs.description}</p>
+        </div>
+    )
 }

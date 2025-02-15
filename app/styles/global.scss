@@ -76,6 +76,29 @@ h1, .h1 {
   }
 }
 
+h2, .h2 {
+  @include h1-font-family;
+  font-size: 3.135rem;
+}
+
+@supports (font-family: -apple-system) {
+  h2, .h2 {
+    font-size: 3.625rem;
+  }
+}
+
+h3, .h3 {
+  @include h1-font-family;
+  font-size: 1.838rem;
+}
+
+@supports (font-family: -apple-system) {
+  h3, .h3 {
+    font-size: 2.125rem;
+  }
+}
+
+
 /* Button */
 .btn {
   margin-right: 1rem;
