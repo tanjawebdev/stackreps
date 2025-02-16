@@ -1,0 +1,21 @@
+.sponsors {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.sponsorimages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.sponsorimages picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image2 {
+  padding-left: 3rem;
+}

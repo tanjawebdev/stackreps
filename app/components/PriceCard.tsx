@@ -1,34 +1,41 @@
 import React, {ReactNode} from "react";
-import {ArrowIcon} from "./svgIcons";
+import {Checkmark} from "./svgIcons";
 import styles from "../styles/PriceCard.module.scss";
 import Button from "./Button";
 
 interface PriceCardProps {
     headline: string;
     price: number;
-    discount: number;
+    discount?: number;
     link: string;
     linktext: string;
     children: ReactNode;
     points?: string[];
-    highlight: boolean;
+    highlight?: boolean;
+    monthly?: boolean;
 }
 
-export default function PriceCard({ headline, price, discount, link, linktext, children, points, highlight }: PriceCardProps) {
+export default function PriceCard({ headline, price, discount, link, linktext, children, points, highlight, monthly }: PriceCardProps) {
     return (
-        <div className={`${styles.priceCard} cards g-col-12 g-col-md-4 ${highlight ? "highlight" : ""}`}>
-            <span className="discount">{discount}% Rabatt</span>
+        <div className={`${styles.priceCard} cards g-col-12 g-col-md-4 ${highlight ? styles.highlightcard : ""}`}>
+            {discount ? <span className={styles.discount}>{discount}% Rabatt</span> : ""}
             <h3>{headline}</h3>
-            <div className="priceDescription">{children}</div>
+            <div className={styles.priceDescription}>{children}</div>
 
-            <p className="price">€{price ? price.toFixed(2) : "--"}</p>
-            <Button href={link} variant={highlight ? "light" : "outline-light"}>{linktext}</Button>
-            <ArrowIcon />
+            <p className={styles.pricecontainer}>
+                <span className={styles.euro}>€</span>
+                <span className={styles.price}>{price ? price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "--"}</span>
+                {monthly ? <span className={styles.monthly}><span>/ Monat</span></span> : ""}
+            </p>
+            <Button className={styles.button} href={link} variant={highlight ? "light" : "outline-light"} icon="arrow" size="sm">{linktext}</Button>
 
             {points && (
                 <ul className="features">
                     {points.map((point, index) => (
-                        <li key={index}>{point}</li>
+                        <li key={index}>
+                            <Checkmark />
+                            <span>{point}</span>
+                        </li>
                     ))}
                 </ul>
             )}

@@ -1,4 +1,5 @@
 @import "bootstrap.scss";
+@import "mixins.scss";
 
 /* Typography */
 
@@ -24,10 +25,6 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-}
-
-@mixin h1-font-family {
-  font-family: -apple-system, BlinkMacSystemFont, "Poppins", Helvetica, sans-serif;
 }
 
 body, html {
@@ -99,10 +96,38 @@ h3, .h3 {
   }
 }
 
+small {
+  font-style: italic;
+  opacity: 0.4;
+}
+
 
 /* Button */
 .btn {
   margin-right: 1rem;
+  display: inline-flex;
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+  }
+}
+
+.btn-outline-light {
+  background: rgba(161, 194, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(14.649999618530273px);
+
+  &:hover {
+    background-color: transparent;
+    border-color: $primary;
+  }
+}
+
+
+.button-icon {
+  margin-left: 1rem;
 }
 
 /* Header */
@@ -116,6 +141,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 #logo {
@@ -127,10 +153,16 @@ header {
   margin-right: 8px;
 }
 
+#nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
 #nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 2.5rem;
   margin: 0;
 }
 
@@ -140,11 +172,15 @@ header {
 
 #nav ul li a {
   text-decoration: none;
+  color: white;
+  transition: 0.2s ease all;
 }
 
 #nav ul li a:hover {
   color: $primary;
 }
+
+
 
 /* Main */
 main {
@@ -166,9 +202,17 @@ section {
 
 /* Footer */
 footer {
-  background-color: #0f1249;
-  padding: 3rem 0;
+  padding: 4rem 0 1.5rem;
   text-align: center;
+  background: rgba(161, 194, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14.649999618530273px);
+  border-radius: 40px 40px 0 0;
+}
+
+footer .logo {
+  display: flex;
+  margin-bottom: 4rem;
 }
 
 footer ul {
@@ -176,7 +220,9 @@ footer ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 footer ul li {
@@ -189,6 +235,7 @@ footer a {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: white;
 }
 
 footer ul.footernav p{
@@ -197,4 +244,22 @@ footer ul.footernav p{
 
 footer a:hover {
   color: $secondary;
+}
+
+footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.4;
+  font-size: 0.8rem;
+  padding: 1rem 0;
+}
+
+footer .footer-bottom p {
+  margin: 0;
 }

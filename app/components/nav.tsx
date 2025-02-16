@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Button from "./Button";
+import styles from "../styles/CtaSection.module.scss";
 
 const navItems = {
   '/': {
@@ -6,6 +8,9 @@ const navItems = {
   },
   '/blog': {
     name: 'Preise',
+  },
+  '/anmelden': {
+    name: 'Anmelden',
   },
 }
 
@@ -28,6 +33,7 @@ export function Navbar() {
           )
         })}
       </ul>
+      <Button href="/" variant="light" className={styles.register} size="sm">Kostenlos Registrieren</Button>
     </nav>
   )
 }

@@ -1,3 +1,92 @@
+@import "mixins.scss";
+
 .priceCard {
-  //background: red;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.highlightcard {
+  padding-top: 5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(161, 194, 255, 0.1);
+}
+
+.discount {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 700;
+  top: 1.5rem;
+  right: 1.5rem;
+  border-radius: 2.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(161, 194, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(14.649999618530273px);
+}
+
+.priceDescription {
+  min-height: 10rem;
+}
+
+.pricecontainer {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.euro {
+  font-size: 1.8rem;
+  font-weight: 500;
+  @include h1-font-family;
+  margin-right: 0.5rem;
+  opacity: 0.5;
+}
+
+.price {
+  font-size: 4rem;
+  font-weight: 500;
+  @include h1-font-family;
+  line-height: 1em;
+}
+
+.monthly {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  @include h1-font-family;
+  font-size: 1.5rem;
+  margin-left: 5px;
+  opacity: 0.3;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-right: 1.25rem;
+}
+
+.priceCard svg {
+  height: 15px;
+  width: 15px;
+  margin-top: -2px;
+}
+
+.priceCard ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.priceCard li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(161, 194, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.priceCard li:last-of-type {
+  border-bottom: none;
 }
