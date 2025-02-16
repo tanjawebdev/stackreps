@@ -155,6 +155,15 @@ section {
   margin-bottom: 15.625rem;
 }
 
+/* Cards */
+.cards {
+  border-radius: 2.5rem;
+  padding: 2rem 3rem 3rem;
+  background: rgba(161, 194, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(14.649999618530273px);
+}
+
 /* Footer */
 footer {
   background-color: #0f1249;

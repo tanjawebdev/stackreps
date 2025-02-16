@@ -18,7 +18,7 @@ export default function HowToCard(probs: HowToCardProps ) {
     const IconComponent = probs.icon ? iconMap[probs.icon] : null;
 
     return (
-        <div className={styles.howToCard + " g-col-md-4"}>
+        <div className={styles.howToCard + " cards g-col-12 g-col-md-4"}>
             {IconComponent && (
                 <div className={styles.icon}>
                     <IconComponent/>

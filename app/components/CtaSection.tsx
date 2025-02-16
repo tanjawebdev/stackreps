@@ -1,14 +1,14 @@
 import Button from "./Button";
-import styles from "../styles/Heading.module.scss";
+import styles from "../styles/CtaSection.module.scss";
 
 export default function CtaSection() {
   return (
     <section className="cta-section container">
-        <div className="grid">
-          <span className="h1 g-col-md-4">
+        <div className={styles.topSection + " grid"}>
+          <span className="h1 g-col-12 g-col-md-4">
               Probiere Stackreps kostenlos aus
           </span>
-          <span className="description g-col-md-6 g-start-md-7">
+          <span className="description g-col-12 g-col-md-6 g-start-md-7">
               Melde dich an und entdecke, wie einfach und effizient Lernen mit Stackreps sein kann. Erhalte sofort Zugang zu personalisierten Lernplänen, Karteikarten und Quizfragen, die dich optimal auf deine Prüfung vorbereiten.
           </span>
         </div>
