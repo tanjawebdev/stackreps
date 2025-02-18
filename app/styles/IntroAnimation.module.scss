@@ -1,14 +1,16 @@
 .introAnimation {
-  background: rgba(21, 105, 255, 0.06);
-  height: 50vh;
-  transform: translateY(-50%);
   margin-bottom: 0;
+  margin-top: -50vh;
+}
+
+.cardAnimation {
+  mix-blend-mode: screen;
 }
 
 .lightspot {
-  top: 0;
+  top: 50%;
   left: 50%;
   width: 150vw;
   height: 150vh;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -35%);
 }
