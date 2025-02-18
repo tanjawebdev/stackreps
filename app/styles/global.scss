@@ -27,12 +27,17 @@
   font-display: swap;
 }
 
+body {
+  position: relative;
+}
+
 body, html {
   font-size: 16px;
   font-weight: 400;
   background-color: #080A35;
   color: #FFFFFF;
   font-family: 'Wix Madefor Text', Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .summary {
@@ -125,9 +130,44 @@ small {
   }
 }
 
-
 .button-icon {
   margin-left: 1rem;
+}
+
+/* grain */
+
+
+main, footer {
+  background-color: #080A35;
+}
+
+main > section:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 10rem;
+}
+
+.grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/grain.png");
+  mix-blend-mode: soft-light;
+  opacity:1;
+  pointer-events: none;
+}
+
+section {
+  position: relative;
+}
+
+/* Spots */
+.spot {
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(63, 128, 245, 0.60) 0%, rgba(52, 105, 206, 0.00) 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Header */
@@ -141,7 +181,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 #logo {
@@ -185,6 +225,8 @@ header {
 /* Main */
 main {
   min-height: calc(100vh - 5rem);
+  z-index: 1;
+  position: relative;
 }
 
 section {

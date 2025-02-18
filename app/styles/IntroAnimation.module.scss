@@ -1,6 +1,14 @@
 .introAnimation {
-  background: #1569FF;
+  background: rgba(21, 105, 255, 0.06);
   height: 50vh;
   transform: translateY(-50%);
   margin-bottom: 0;
+}
+
+.lightspot {
+  top: 0;
+  left: 50%;
+  width: 150vw;
+  height: 150vh;
+  transform: translate(-50%, -30%);
 }

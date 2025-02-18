@@ -1,4 +1,13 @@
 .screenMarquee {
-  background: #1569FF;
+  background: rgba(21, 105, 255, 0.06);
   height: 50vh;
+}
+
+.lightspot {
+  top: 0;
+  left: 50%;
+  width: 120vw;
+  height: 100vh;
+  transform: translate(-50%, -30%) rotate(-10deg);
+  opacity: 0.6;
 }

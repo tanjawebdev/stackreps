@@ -59,11 +59,12 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main>
+          <div className="grain"></div>
           {children}
-          <Analytics />
-          <SpeedInsights />
+          <Analytics/>
+          <SpeedInsights/>
         </main>
-        <Footer />
+        <Footer/>
       </body>
     </html>
   )

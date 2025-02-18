@@ -19,3 +19,12 @@
 .image2 {
   padding-left: 3rem;
 }
+
+.lightspot {
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 120vh;
+  transform: translate(-30%, -50%) rotate(-5deg);
+  opacity: 0.6;
+}
