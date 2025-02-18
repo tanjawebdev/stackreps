@@ -1,13 +1,38 @@
 .screenMarquee {
-  background: rgba(21, 105, 255, 0.06);
-  height: 50vh;
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.1s ease-out;
+}
+
+.row2 {
+  margin-left: -20vw;
+}
+
+.image {
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+  width: 28vw;
 }
 
 .lightspot {
-  top: 0;
+  top: 50%;
   left: 50%;
-  width: 120vw;
-  height: 100vh;
-  transform: translate(-50%, -30%) rotate(-10deg);
+  width: 150vw;
+  height: 120vh;
+  transform: translate(-30%, -50%) rotate(-5deg);
   opacity: 0.6;
 }
