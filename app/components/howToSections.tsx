@@ -2,7 +2,7 @@ import HowToCard from "./HowToCard";
 
 export default function HowToSections() {
   return (
-    <section className="how-to-sections container">
+    <section id="features" className="how-to-sections container">
         <div className="grid">
             <div className="title g-col-md-5">
                 <h2>So funktionierts</h2>

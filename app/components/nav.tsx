@@ -1,39 +1,49 @@
-import Link from 'next/link'
+"use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Button from "./Button";
 import styles from "../styles/CtaSection.module.scss";
 
-const navItems = {
-  '/': {
-    name: 'Features',
-  },
-  '/blog': {
-    name: 'Preise',
-  },
-  '/anmelden': {
-    name: 'Anmelden',
-  },
-}
+const navItems = [
+  { path: '/', name: 'Features', sectionId: 'features' },
+  { path: '/', name: 'Preise', sectionId: 'prices' },
+  { path: 'https://study.stackreps.com', name: 'Anmelden' },
+];
 
 export function Navbar() {
+  const pathname = usePathname();
+
+  const handleScroll = (sectionId: string) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+          const offset = 100;
+          const topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+
+          window.scrollTo({
+              top: topPosition,
+              behavior: "smooth",
+          });
+      }
+  };
+
   return (
-    <nav
-      id="nav"
-    >
-      <ul>
-        {Object.entries(navItems).map(([path, { name }]) => {
-          return (
+      <nav id="nav">
+        <ul>
+          {navItems.map(({ path, name, sectionId }) => (
               <li key={name}>
-                <Link
-                  key={path}
-                  href={path}
-                >
-                  {name}
-                </Link>
+                {pathname === "/" && sectionId ? (
+                    <span onClick={() => handleScroll(sectionId)} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                      {name}
+                    </span>
+                ) : (
+                    <Link href={path}>{name}</Link>
+                )}
               </li>
-          )
-        })}
-      </ul>
-      <Button href="/" variant="light" className={styles.register} size="sm">Kostenlos Registrieren</Button>
-    </nav>
-  )
+          ))}
+        </ul>
+        <Button href="/" variant="light" className={styles.register} size="sm">
+          Kostenlos Registrieren
+        </Button>
+      </nav>
+  );
 }

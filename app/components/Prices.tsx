@@ -2,7 +2,7 @@ import PriceCard from "./PriceCard";
 
 export default function Prices() {
   return (
-      <section className="prices container">
+      <section id="prices" className="prices container">
           <div className="grid">
               <div className="title g-col-md-5">
                   <h2>Preise und Abos</h2>
