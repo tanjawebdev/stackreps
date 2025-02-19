@@ -1,5 +1,7 @@
+"use client";
 import Button from "./Button";
 import styles from '../styles/Heading.module.scss';
+import { scrollToSection } from "../utils/scrollToSection";
 
 export default function Heading() {
   return (
@@ -12,8 +14,9 @@ export default function Heading() {
         Karteikarten, Tests und der optimale Lernplan angepasst auf deine Prüfung.
       </p>
       <div className="heading-buttons">
-        <Button href="/" variant="light" className={styles.register} size="lg">Kostenlos Registrieren</Button>
-        <Button href="/" variant="outline-light" className="howto" size="lg">So funktionierts</Button>
+        <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="lg">Kostenlos Registrieren</Button>
+        <Button onClick={() => scrollToSection("features")} variant="outline-light" className="howto" size="lg">So funktionierts</Button>
+
       </div>
     </section>
   )

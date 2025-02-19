@@ -16,7 +16,7 @@ export default function Prices() {
                   <PriceCard
                       headline="Lernmaterialien Klein"
                       price={1.99}
-                      link="/"
+                      link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
                       points={["100 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
                       highlight={false}
@@ -31,7 +31,7 @@ export default function Prices() {
                   <PriceCard
                       headline="Lernmaterialien Groß"
                       price={14.99}
-                      link="/"
+                      link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
                       points={["1.000 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
                       discount={25}
@@ -47,7 +47,7 @@ export default function Prices() {
                   <PriceCard
                       headline="Studenten Abo"
                       price={8.99}
-                      link="/"
+                      link="https://study.stackreps.com/"
                       linktext="Plan abonnieren"
                       points={["500 Lernkarten", "Multiple-Choice-Fragen inklusive", "10 Buchkapitel"]}
                       discount={55}

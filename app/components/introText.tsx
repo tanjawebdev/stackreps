@@ -1,5 +1,7 @@
+"use client";
 import Button from "./Button";
 import styles from "../styles/Heading.module.scss";
+import { scrollToSection } from "../utils/scrollToSection";
 
 export default function IntroText() {
   return (
@@ -17,8 +19,8 @@ export default function IntroText() {
               Lernerfolg maximieren.
           </p>
           <div className="intro-test-buttons">
-              <Button href="/" variant="light" className={styles.register} size="lg">Registrieren</Button>
-              <Button href="/" variant="outline-light" className="howto" size="lg">Anmelden</Button>
+              <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="lg">Registrieren</Button>
+              <Button onClick={() => scrollToSection("features")} variant="outline-light" className="howto" size="lg">So funktionierts</Button>
           </div>
       </section>
   )

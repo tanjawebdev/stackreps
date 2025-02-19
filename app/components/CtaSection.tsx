@@ -12,7 +12,7 @@ export default function CtaSection() {
               Melde dich an und entdecke, wie einfach und effizient Lernen mit Stackreps sein kann. Erhalte sofort Zugang zu personalisierten Lernplänen, Karteikarten und Quizfragen, die dich optimal auf deine Prüfung vorbereiten.
           </span>
           </div>
-          <Button href="/" variant="light" className={styles.register} size="lg">Jetzt Registrieren</Button>
+          <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="lg">Jetzt Registrieren</Button>
           <div className={styles.lightspot + " spot"}></div>
       </section>
   )

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Button from "./Button";
 import styles from "../styles/CtaSection.module.scss";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const navItems = [
   { path: '/', name: 'Features', sectionId: 'features' },
@@ -13,26 +14,13 @@ const navItems = [
 export function Navbar() {
   const pathname = usePathname();
 
-  const handleScroll = (sectionId: string) => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-          const offset = 100;
-          const topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
-
-          window.scrollTo({
-              top: topPosition,
-              behavior: "smooth",
-          });
-      }
-  };
-
   return (
       <nav id="nav">
         <ul>
           {navItems.map(({ path, name, sectionId }) => (
               <li key={name}>
                 {pathname === "/" && sectionId ? (
-                    <span onClick={() => handleScroll(sectionId)} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                    <span onClick={() => scrollToSection(sectionId)} style={{ background: "none", border: "none", cursor: "pointer" }}>
                       {name}
                     </span>
                 ) : (
@@ -41,7 +29,7 @@ export function Navbar() {
               </li>
           ))}
         </ul>
-        <Button href="/" variant="light" className={styles.register} size="sm">
+        <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="sm">
           Kostenlos Registrieren
         </Button>
       </nav>
