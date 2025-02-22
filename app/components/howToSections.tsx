@@ -4,7 +4,7 @@ export default function HowToSections() {
   return (
     <section id="features" className="how-to-sections container">
         <div className="grid">
-            <div className="title g-col-md-5">
+            <div className="title g-col-12 g-col-md-5">
                 <h2>So funktionierts</h2>
                 <p>In nur drei Schritten kannst du deine Prüfungsvorbereitung starten und den für dich individuell
                     erstellten Lernplan erhalten.</p>

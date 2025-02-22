@@ -1,11 +1,21 @@
+@import "bootstrap-includes";
+
 .introAnimation {
   margin-bottom: 0;
   margin-top: -50vh;
   min-height: 50vw;
+
+  @include media-breakpoint-down(md) {
+    margin-top: -30vw;
+  }
 }
 
 .cardAnimation {
   mix-blend-mode: screen;
+
+  @include media-breakpoint-down(md) {
+    transform: scale(1.25);
+  }
 }
 
 .lightspot {
@@ -14,4 +24,9 @@
   width: 150vw;
   height: 150vh;
   transform: translate(-50%, -35%);
+
+  @include media-breakpoint-down(md) {
+    top: 10%;
+    height: 100vh;
+  }
 }

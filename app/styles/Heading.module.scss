@@ -1,3 +1,5 @@
+@import "bootstrap-includes";
+
 .heading {
   mix-blend-mode: plus-lighter;
   text-align: center;
@@ -12,8 +14,29 @@
 .heading .summary {
   margin-bottom: 2rem;
   margin-top: -25vh;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 0;
+  }
 }
 
 .heading .subtitle {
   margin-bottom: 4rem;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 2rem;
+  }
+}
+
+.heading button, .register {
+  @include media-breakpoint-down(md) {
+    margin-right: 0;
+  }
+}
+
+.register {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
 }

@@ -1,7 +1,13 @@
+@import "bootstrap-includes";
+
 .screenMarquee {
   position: relative;
   width: 100%;
   padding: 40px 0;
+
+  @include media-breakpoint-down(md) {
+    padding: 20px 0;
+  }
 }
 
 .marquee {
@@ -9,16 +15,28 @@
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    gap: 10px;
+  }
 }
 
 .row {
   display: flex;
   gap: 20px;
   transition: transform 0.1s ease-out;
+
+  @include media-breakpoint-down(md) {
+    gap: 10px;
+  }
 }
 
 .row2 {
   margin-left: -20vw;
+
+  @include media-breakpoint-down(md) {
+    margin-left: -40vw;
+  }
 }
 
 .image {
@@ -26,6 +44,11 @@
   object-fit: cover;
   border-radius: 30px;
   width: 28vw;
+
+  @include media-breakpoint-down(md) {
+    border-radius: 10px;
+    width: 40vw;
+  }
 }
 
 .lightspot {

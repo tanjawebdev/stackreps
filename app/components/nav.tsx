@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Button from "./Button";
-import styles from "../styles/CtaSection.module.scss";
 import { scrollToSection } from "../utils/scrollToSection";
 
 const navItems = [
@@ -29,8 +28,12 @@ export function Navbar() {
               </li>
           ))}
         </ul>
-        <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="sm">
+        <Button href="https://study.stackreps.com/" variant="light" className="login-lg" size="sm">
           Kostenlos Registrieren
+        </Button>
+
+        <Button href="https://study.stackreps.com/" variant="light" className="login-sm" size="sm">
+            Anmelden
         </Button>
       </nav>
   );

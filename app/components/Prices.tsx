@@ -4,7 +4,7 @@ export default function Prices() {
   return (
       <section id="prices" className="prices container">
           <div className="grid">
-              <div className="title g-col-md-5">
+              <div className="title g-col-12 g-col-md-5">
                   <h2>Preise und Abos</h2>
                   <p>
                       Wähle das passende Paket für deine Lernziele: Ob kleine Lernhilfen, umfangreiches Material oder
