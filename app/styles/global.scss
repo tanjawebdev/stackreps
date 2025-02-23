@@ -242,12 +242,23 @@ header {
   left: 0;
   width: 100%;
   z-index: 2;
-  backdrop-filter: blur(10px);
   border-bottom: 0.5px solid #ffffff30;
 
   @include media-breakpoint-down(md) {
     padding: 10px 10px 10px 20px;
   }
+}
+
+.header-blur {
+  position: absolute;
+  backdrop-filter: blur(10px);
+  background-color: #262b4b30;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
 }
 
 #logo {
@@ -263,13 +274,21 @@ header {
   }
 }
 
+
+/* Navigation */
 #nav {
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    gap: 1.5rem;
+  }
 }
 
-#nav ul {
+/* Desktop Menu */
+.nav-links {
   list-style: none;
   display: flex;
   gap: 2.5rem;
@@ -280,28 +299,23 @@ header {
   }
 }
 
-#nav ul li {
+.nav-links li {
   display: inline;
 }
 
-#nav ul li a, #nav ul li span {
+.nav-item {
   text-decoration: none;
   color: white;
   transition: 0.2s ease all;
   cursor: pointer;
 }
 
-#nav ul li a:hover, #nav ul li span:hover {
+.nav-item:hover {
   color: $primary;
 }
 
-#nav .login-lg {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
-}
-
-#nav .login-sm {
+/* Mobile Login Button */
+.login-sm {
   margin: 0;
 
   @include media-breakpoint-up(md) {
@@ -309,7 +323,91 @@ header {
   }
 }
 
+.login-lg {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
 
+/* Burger Menu Button */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  line-height: 1em;
+  margin-top: -5px;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+
+  &.open {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 62px);
+  //background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 9999;
+  background-color: #262b4b30;
+  backdrop-filter: blur(10px);
+  border-top: 0.5px solid #ffffff30;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin: 1rem 0;
+  border-top: 0.5px solid #ffffff30;
+  padding-top: 1rem;
+}
+
+.mobile-menu li:last-of-type {
+  border-bottom: 0.5px solid #ffffff30;
+  padding-bottom: 1rem;
+}
+
+.mobile-menu ul a, .mobile-menu ul span {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-menu a:hover, .mobile-menu span:hover {
+  color: $primary;
+}
+
+/* Close Button */
+.close-menu {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
 /* Main */
 main {

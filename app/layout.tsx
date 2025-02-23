@@ -55,6 +55,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <header>
+          <div className="header-blur"></div>
           <Logo />
           <Navbar />
         </header>
