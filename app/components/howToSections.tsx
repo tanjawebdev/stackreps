@@ -1,4 +1,6 @@
+"use client"
 import HowToCard from "./HowToCard";
+import FadeInEffect from "./fadeInEffect";
 
 export default function HowToSections() {
   return (

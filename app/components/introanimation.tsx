@@ -1,16 +1,10 @@
 "use client";
 
 import styles from "../styles/IntroAnimation.module.scss";
-import React, { useEffect, useRef } from "react";
-
-interface SplineViewerElement extends HTMLElement {
-    emitEvent: (eventName: string, target: string, data: any) => void;
-}
-
-
+import React, {useEffect, useRef, useState} from "react";
 
 export default function IntroAnimation() {
-    const splineRef = useRef<HTMLElement | null>(null);
+    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -50,9 +44,15 @@ export default function IntroAnimation() {
         }
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <section className={styles.introAnimation + " container-fluid"}>
-            <div className={styles.cardAnimation}>
+            <div className={styles.cardAnimation} style={{ transform: `scale(${1 + scrollY * 0.0005}) translateY(${-scrollY * 0.1}px)` }}>
                 {React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode", "events-target": "global"
                 })}
