@@ -31,6 +31,13 @@ body {
   position: relative;
 }
 
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body, html {
   font-size: 16px;
   font-weight: 400;
@@ -243,6 +250,7 @@ header {
   width: 100%;
   z-index: 2;
   border-bottom: 0.5px solid #ffffff30;
+  border-top: 0.5px solid #ffffff30;
 
   @include media-breakpoint-down(md) {
     padding: 10px 10px 10px 20px;
@@ -284,6 +292,7 @@ header {
 
   @include media-breakpoint-down(md) {
     gap: 1.5rem;
+    justify-content: flex-end;
   }
 }
 
@@ -391,6 +400,8 @@ header {
   color: white;
   text-decoration: none;
   cursor: pointer;
+  font-size: 1.75rem;
+  @include h1-font-family;
 }
 
 .mobile-menu a:hover, .mobile-menu span:hover {
