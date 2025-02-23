@@ -12,7 +12,7 @@ const FadeInSection = ({ children }) => {
                     entry.target.classList.remove("visible");
                 }
             },
-            { threshold: 0.6 } // Trigger when x% of the element is visible
+            { threshold: 0.4 } // Trigger when x% of the element is visible
         );
 
         if (ref.current) observer.observe(ref.current);

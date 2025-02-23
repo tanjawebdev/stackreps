@@ -52,7 +52,7 @@ export default function IntroAnimation() {
 
     return (
         <section className={styles.introAnimation + " container-fluid"}>
-            <div className={styles.cardAnimation} style={{ transform: `scale(${1 + scrollY * 0.0005}) translateY(${-scrollY * 0.1}px)` }}>
+            <div className={styles.cardAnimation} style={{ transform: `scale(${1 + scrollY * 0.0003}) translateY(${-scrollY * 0.1}px)` }}>
                 {React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode", "events-target": "global"
                 })}
