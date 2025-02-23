@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 
-const FadeInSection = ({ children }) => {
-    const ref = useRef(null);
+const useFadeInOnScroll = (delay = 0) => {
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    console.log(delay + " " + ref.current);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -12,19 +14,17 @@ const FadeInSection = ({ children }) => {
                     entry.target.classList.remove("visible");
                 }
             },
-            { threshold: 0.4 } // Trigger when x% of the element is visible
+            { threshold: 0.4 }
         );
 
-        if (ref.current) observer.observe(ref.current);
+        if (ref.current) {
+            setTimeout(() => observer.observe(ref.current!), delay);
+        }
 
         return () => observer.disconnect();
-    }, []);
+    }, [delay]);
 
-    return (
-        <div ref={ref} className="fade-in">
-            {children}
-        </div>
-    );
+    return ref;
 };
 
-export default FadeInSection;
+export default useFadeInOnScroll;
