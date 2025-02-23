@@ -13,7 +13,7 @@ export default function Heading() {
       <p className={styles.subtitle + " subtitle"}>
         Karteikarten, Tests und der optimale Lernplan angepasst auf deine Prüfung.
       </p>
-      <div className="heading-buttons">
+      <div className={styles.headingButtons}>
         <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="lg">Kostenlos Registrieren</Button>
         <Button onClick={() => scrollToSection("features")} variant="outline-light" className="howto" size="lg">So funktionierts</Button>
 
