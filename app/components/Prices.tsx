@@ -1,10 +1,11 @@
 import PriceCard from "./PriceCard";
+import styles from "../styles/Prices.module.scss";
 
 export default function Prices() {
   return (
       <section id="prices" className="prices container">
           <div className="grid">
-              <div className="title g-col-12 g-col-md-5">
+              <div className="title g-col-12 g-col-lg-7 g-col-xl-5">
                   <h2>Preise und Abos</h2>
                   <p>
                       Wähle das passende Paket für deine Lernziele: Ob kleine Lernhilfen, umfangreiches Material oder
@@ -12,7 +13,7 @@ export default function Prices() {
                   </p>
               </div>
           </div>
-              <div className="grid">
+              <div className={styles.pricesGrid + " grid"}>
                   <PriceCard
                       headline="Lernmaterialien Klein"
                       price={1.99}

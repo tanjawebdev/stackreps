@@ -1,0 +1,7 @@
+@import "bootstrap-includes";
+
+.pricesGrid {
+  @include media-breakpoint-down(md) {
+    gap: 1rem;
+  }
+}

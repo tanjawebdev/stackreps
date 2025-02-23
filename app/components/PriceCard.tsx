@@ -17,7 +17,7 @@ interface PriceCardProps {
 
 export default function PriceCard({ headline, price, discount, link, linktext, children, points, highlight, monthly }: PriceCardProps) {
     return (
-        <div className={`${styles.priceCard} cards g-col-12 g-col-md-4 ${highlight ? styles.highlightcard : ""}`}>
+        <div className={`${styles.priceCard} cards g-col-12 g-col-lg-4 ${highlight ? styles.highlightcard : ""}`}>
             {discount ? <span className={styles.discount}>{discount}% Rabatt</span> : ""}
             <h3>{headline}</h3>
             <div className={styles.priceDescription}>{children}</div>

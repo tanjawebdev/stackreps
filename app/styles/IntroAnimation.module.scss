@@ -2,11 +2,10 @@
 
 .introAnimation {
   margin-bottom: 0;
-  margin-top: -50vh;
+  margin-top: -25vw;
   min-height: 50vw;
 
   @include media-breakpoint-down(md) {
-    margin-top: -30vw;
     margin-bottom: 3rem;
   }
 }

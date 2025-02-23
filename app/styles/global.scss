@@ -78,6 +78,10 @@ body, html {
   margin-bottom: 2rem;
 
   @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
     font-size: 2.125rem;
     margin-bottom: 4rem;
   }
@@ -101,6 +105,10 @@ h1, .h1 {
   }
 
   @include media-breakpoint-up(lg) {
+    font-size: 3.8rem;
+  }
+
+  @include media-breakpoint-up(xl) {
     font-size: 4.625rem;
   }
 }
@@ -114,6 +122,10 @@ h1, .h1 {
     }
 
     @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+
+    @include media-breakpoint-up(xl) {
       font-size: 5.3rem;
     }
   }
@@ -145,6 +157,10 @@ h3, .h3 {
   @include media-breakpoint-up(md) {
     font-size: 1.838rem;
   }
+
+  @include media-breakpoint-only(lg) {
+    font-size: 1.6rem;
+  }
 }
 
 @supports (font-family: -apple-system) {
@@ -153,6 +169,10 @@ h3, .h3 {
 
     @include media-breakpoint-up(md) {
       font-size: 2.125rem;
+    }
+
+    @include media-breakpoint-only(lg) {
+      font-size: 1.8rem;
     }
   }
 }
@@ -250,10 +270,10 @@ header {
   width: 100%;
   z-index: 2;
   border-bottom: 0.5px solid #ffffff30;
-  border-top: 0.5px solid #ffffff30;
 
   @include media-breakpoint-down(md) {
     padding: 10px 10px 10px 20px;
+    border-top: 0.5px solid #ffffff30;
   }
 }
 
@@ -267,6 +287,11 @@ header {
   left: 0;
   pointer-events: none;
   z-index: -1;
+
+  @include media-breakpoint-down(md) {
+    height: calc(100% + 1px);
+    top: -1px;
+  }
 }
 
 #logo {
@@ -431,6 +456,14 @@ section {
   margin-bottom: 6rem;
 
   @include media-breakpoint-up(md) {
+    margin-bottom: 8rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 10rem;
+  }
+
+  @include media-breakpoint-up(xl) {
     margin-bottom: 15.625rem;
   }
 }
@@ -444,13 +477,17 @@ section {
 
 .cards {
   border-radius: 2.5rem;
-  padding: 2rem 3rem 3rem;
+  padding: 2rem 2rem 1rem;
   background: rgba(161, 194, 255, 0.05);
   border: 0.5px solid rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(14.649999618530273px);
 
-  @include media-breakpoint-down(md) {
-    padding: 2rem 2rem 1rem;
+  @include media-breakpoint-up(lg) {
+    padding: 1rem 2rem 1rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 2rem 3rem 3rem;
   }
 }
 
