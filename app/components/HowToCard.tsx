@@ -19,12 +19,14 @@ export default function HowToCard(probs: HowToCardProps ) {
 
     return (
         <div className={styles.howToCard + " cards g-col-12 g-col-md-4"}>
-            {IconComponent && (
-                <div className={styles.icon}>
-                    <IconComponent/>
-                </div>
-            )}
-            <h3>{probs.headline}</h3>
+            <div className={styles.toppart}>
+                {IconComponent && (
+                    <div className={styles.icon + " g-col-3 g-col-md-12"}>
+                        <IconComponent/>
+                    </div>
+                )}
+                <h3>{probs.headline}</h3>
+            </div>
             <hr/>
             <p>{probs.description}</p>
         </div>

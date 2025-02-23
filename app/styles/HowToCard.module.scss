@@ -24,7 +24,21 @@
 
 .icon svg {
   @include media-breakpoint-down(md) {
-    max-height: 60px;
-    max-width: 60px;
+    max-height: 50px;
+    max-width: 40px;
+  }
+}
+
+.toppart {
+  @include media-breakpoint-down(md) {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+}
+
+.icon, .toppart h3 {
+  @include media-breakpoint-down(md) {
+    margin: 0;
   }
 }
