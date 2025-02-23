@@ -1,10 +1,14 @@
 @import "mixins.scss";
+@import "bootstrap-includes";
 
 .priceCard {
   padding-top: 3rem;
   padding-bottom: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .highlightcard {

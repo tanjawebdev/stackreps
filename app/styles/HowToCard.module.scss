@@ -7,6 +7,7 @@
 
   @include media-breakpoint-down(md) {
     word-spacing: 0;
+    font-size: 1.2rem;
   }
 }
 
@@ -27,6 +28,15 @@
     max-height: 50px;
     max-width: 40px;
   }
+}
+
+.howToCard:nth-of-type(2) svg {
+  margin-bottom: -6px;
+}
+
+.howToCard:nth-of-type(3) svg {
+  margin-bottom: -18px;
+  transform: scale(1.3);
 }
 
 .toppart {
