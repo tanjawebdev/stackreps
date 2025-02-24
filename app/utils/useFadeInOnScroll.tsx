@@ -1,14 +1,16 @@
 import { useEffect, useRef } from "react";
+import useScreenSize from "./useScreenSize";
 
-const useFadeInOnScroll = (delay = 0) => {
+
+const useFadeInOnScroll = (desktopDelay = 0, mobileDelay = 0) => {
     const ref = useRef<HTMLDivElement | null>(null);
-
-    console.log(delay + " " + ref.current);
+    const isMobile = useScreenSize();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
+                    const delay = isMobile ? mobileDelay : desktopDelay;
                     setTimeout(() => entry.target.classList.add("visible"), delay);
                 } else {
                     entry.target.classList.remove("visible");
@@ -22,7 +24,7 @@ const useFadeInOnScroll = (delay = 0) => {
         }
 
         return () => observer.disconnect();
-    }, [delay]);
+    }, [desktopDelay, mobileDelay, isMobile]);
 
     return ref;
 };

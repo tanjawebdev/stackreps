@@ -1,12 +1,12 @@
 "use client"
 import PriceCard from "./PriceCard";
 import styles from "../styles/Prices.module.scss";
-import useFadeInOnScroll from "./useFadeInOnScroll";
+import useFadeInOnScroll from "../utils/useFadeInOnScroll";
 
 export default function Prices() {
-    const refPrice1 = useFadeInOnScroll(300);
-    const refPrice2 = useFadeInOnScroll(0);
-    const refPrice3 = useFadeInOnScroll(300);
+    const refPrice1 = useFadeInOnScroll(300, 0);
+    const refPrice2 = useFadeInOnScroll(0, 0);
+    const refPrice3 = useFadeInOnScroll(300, 0);
 
   return (
       <section id="prices" className="prices container">

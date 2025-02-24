@@ -1,11 +1,11 @@
 "use client"
 import HowToCard from "./HowToCard";
-import useFadeInOnScroll from "./useFadeInOnScroll";
+import useFadeInOnScroll from "../utils/useFadeInOnScroll";
 
 export default function HowToSections() {
-    const refCard1 = useFadeInOnScroll(0);
-    const refCard2 = useFadeInOnScroll(200);
-    const refCard3 = useFadeInOnScroll(400);
+    const refCard1 = useFadeInOnScroll(0, 0);
+    const refCard2 = useFadeInOnScroll(200, 0);
+    const refCard3 = useFadeInOnScroll(400, 0);
 
 
     return (

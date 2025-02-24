@@ -1,11 +1,11 @@
 "use client";
 import Button from "./Button";
 import { scrollToSection } from "../utils/scrollToSection";
-import useFadeInOnScroll from "./useFadeInOnScroll";
+import useFadeInOnScroll from "../utils/useFadeInOnScroll";
 
 
 export default function IntroText() {
-  const ref = useFadeInOnScroll(0);
+  const ref = useFadeInOnScroll(0, 0);
 
   return (
      <section className="intro-text container fade-in" ref={ref}>
