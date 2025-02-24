@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React, {ReactNode , forwardRef} from "react";
 import {Checkmark} from "./svgIcons";
 import styles from "../styles/PriceCard.module.scss";
 import Button from "./Button";
@@ -13,11 +13,13 @@ interface PriceCardProps {
     points?: string[];
     highlight?: boolean;
     monthly?: boolean;
+    ref?: React.RefObject<HTMLDivElement>;
 }
 
-export default function PriceCard({ headline, price, discount, link, linktext, children, points, highlight, monthly }: PriceCardProps) {
+const PriceCard = forwardRef<HTMLDivElement, PriceCardProps>(
+    ({ headline, price, discount, link, linktext, children, points, highlight, monthly }, ref) => {
     return (
-        <div className={`${styles.priceCard} cards g-col-12 g-col-lg-4 ${highlight ? styles.highlightcard : ""}`}>
+        <div ref={ref} className={`${styles.priceCard} cards fade-in g-col-12 g-col-lg-4 ${highlight ? styles.highlightcard : ""}`}>
             {discount ? <span className={styles.discount}>{discount}% Rabatt</span> : ""}
             <h3>{headline}</h3>
             <div className={styles.priceDescription}>{children}</div>
@@ -41,4 +43,6 @@ export default function PriceCard({ headline, price, discount, link, linktext, c
             )}
         </div>
     )
-}
+});
+
+export default PriceCard;

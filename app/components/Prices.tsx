@@ -1,7 +1,13 @@
+"use client"
 import PriceCard from "./PriceCard";
 import styles from "../styles/Prices.module.scss";
+import useFadeInOnScroll from "./useFadeInOnScroll";
 
 export default function Prices() {
+    const refPrice1 = useFadeInOnScroll(300);
+    const refPrice2 = useFadeInOnScroll(0);
+    const refPrice3 = useFadeInOnScroll(300);
+
   return (
       <section id="prices" className="prices container">
           <div className="grid">
@@ -21,6 +27,7 @@ export default function Prices() {
                       linktext="Produkt kaufen"
                       points={["100 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
                       highlight={false}
+                      ref={refPrice1}
                   >
                       <p>
                           Erhalte <strong>100 automatisch generierte Lernkarten</strong> inklusive passender
@@ -36,7 +43,8 @@ export default function Prices() {
                       linktext="Produkt kaufen"
                       points={["1.000 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
                       discount={25}
-                      highlight={true} // Assuming this is a featured/highlighted card
+                      highlight={true}
+                      ref={refPrice2}
                   >
                       <p>
                           Erhalte <strong>1.000 automatisch generierte Lernkarten</strong> inklusive passender
@@ -54,6 +62,7 @@ export default function Prices() {
                       discount={55}
                       highlight={false}
                       monthly={true}
+                      ref={refPrice3}
                   >
                       <p>
                           Ein monatliches Abo speziell für Studenten. Enthalten sind <strong>500

@@ -9,7 +9,7 @@ const useFadeInOnScroll = (delay = 0) => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
+                    setTimeout(() => entry.target.classList.add("visible"), delay);
                 } else {
                     entry.target.classList.remove("visible");
                 }
@@ -18,7 +18,7 @@ const useFadeInOnScroll = (delay = 0) => {
         );
 
         if (ref.current) {
-            setTimeout(() => observer.observe(ref.current!), delay);
+            observer.observe(ref.current);
         }
 
         return () => observer.disconnect();
