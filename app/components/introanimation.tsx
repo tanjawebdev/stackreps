@@ -1,10 +1,11 @@
 "use client";
 
 import styles from "../styles/IntroAnimation.module.scss";
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function IntroAnimation() {
-    const [scrollY, setScrollY] = useState(0);
+    const scrollY = useRef(0);
+    const splineViewerRef = useRef<HTMLDivElement | null>(null); // Ref for the spline viewer
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -18,41 +19,49 @@ export default function IntroAnimation() {
     }, []);
 
     useEffect(() => {
-        const splineViewer = document.querySelector("spline-viewer");
+        const handleScroll = () => {
+            scrollY.current = window.scrollY;
+            if (!splineViewerRef.current) return;
 
-        if (splineViewer) {
+            // Get the spline-viewer element
+            const splineViewer = splineViewerRef.current.querySelector("spline-viewer");
+            if (!splineViewer) return;
+
+            // Wait until the custom element is defined
             customElements.whenDefined("spline-viewer").then(() => {
                 const shadowRoot = splineViewer.shadowRoot;
-                if (shadowRoot) {
-                    const logo = shadowRoot.querySelector("#logo");
-                    if (logo) {
-                        const logoElement = logo as HTMLElement;
+                if (!shadowRoot) return;
 
+                // Select the <canvas> inside shadowRoot
+                const canvas = shadowRoot.querySelector("canvas");
+                if (canvas) {
+                    // Apply transform styles
+                    canvas.style.transform = `scale(${1 + scrollY.current * 0.0003}) translateY(${-scrollY.current * 0.1}px)`;
+                }
+
+                const logo = shadowRoot.querySelector("#logo");
+                if (logo) {
+                    const logoElement = logo as HTMLElement;
+
+                    logoElement.style.right = "-112px";
+                    logoElement.style.transition = "0.2s ease right";
+                    logoElement.onmouseover = () => {
+                        logoElement.style.right = "0px";
+                    };
+                    logoElement.onmouseout = () => {
                         logoElement.style.right = "-112px";
-                        logoElement.style.transition = "0.2s ease right";
-                        logoElement.onmouseover = () => {
-                            logoElement.style.right = "0px";
-                        };
-                        logoElement.onmouseout = () => {
-                            logoElement.style.right = "-112px";
-                        };
-                    }
-                } else {
-                    console.warn("Shadow root not available yet");
+                    };
                 }
             });
-        }
-    }, []);
+        };
 
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
         <section className={styles.introAnimation + " container-fluid"}>
-            <div className={styles.cardAnimation} style={{ transform: `scale(${1 + scrollY * 0.0003}) translateY(${-scrollY * 0.1}px)` }}>
+            <div ref={splineViewerRef} className={styles.cardAnimation}>
                 {React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode", "events-target": "global"
                 })}
