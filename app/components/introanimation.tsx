@@ -38,7 +38,6 @@ export default function IntroAnimation() {
 
                 // Select the <canvas> inside shadowRoot
                 const canvas = shadowRoot.querySelector("canvas");
-                console.log(zoomFactor);
 
                 if (canvas) {
                     // Apply transform styles
@@ -61,6 +60,7 @@ export default function IntroAnimation() {
             });
         };
 
+        handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isMobile]);
