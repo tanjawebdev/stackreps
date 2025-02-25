@@ -24,7 +24,7 @@
 .row {
   display: flex;
   gap: 20px;
-  transition: transform 0.25s ease;
+  will-change: transform;
 
   @include media-breakpoint-down(md) {
     gap: 10px;

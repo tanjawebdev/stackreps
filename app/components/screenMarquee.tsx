@@ -1,15 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../styles/ScreenMarquee.module.scss";
 
 const images = Array.from({ length: 8 }, (_, i) => `/images/marquee/image${i + 1}.png`);
 
 export default function ScreenMarquee() {
-    const [scrollY, setScrollY] = useState(0);
+    const row1Ref = useRef<HTMLDivElement>(null);
+    const row2Ref = useRef<HTMLDivElement>(null);
+    const lastScrollY = useRef(0);
+    const ticking = useRef(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
+        const handleScroll = () => {
+            lastScrollY.current = window.scrollY;
+
+            if (!ticking.current) {
+                ticking.current = true;
+                requestAnimationFrame(() => {
+                    if (row1Ref.current && row2Ref.current) {
+                        row1Ref.current.style.transform = `translateX(${lastScrollY.current * -0.1}px)`;
+                        row2Ref.current.style.transform = `translateX(${lastScrollY.current * 0.1}px)`;
+                    }
+                    ticking.current = false;
+                });
+            }
+        };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -17,13 +34,13 @@ export default function ScreenMarquee() {
     return (
         <section className={`${styles.screenMarquee} container-fluid`}>
             <div className={styles.marquee}>
-                <div className={styles.row} style={{ transform: `translateX(${scrollY * -0.1}px)` }}>
+                <div ref={row1Ref} className={styles.row}>
                     {images.slice(0, 4).map((src, index) => (
                         <img key={index} src={src} alt={`Marquee ${index + 1}`} className={styles.image} />
                     ))}
                 </div>
 
-                <div className={styles.row + " " + styles.row2} style={{ transform: `translateX(${scrollY * 0.1}px)` }}>
+                <div ref={row2Ref} className={`${styles.row} ${styles.row2}`}>
                     {images.slice(4, 8).map((src, index) => (
                         <img key={index} src={src} alt={`Marquee ${index + 5}`} className={styles.image} />
                     ))}
