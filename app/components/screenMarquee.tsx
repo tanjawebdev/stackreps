@@ -9,20 +9,20 @@ export default function ScreenMarquee() {
     const row1Ref = useRef<HTMLDivElement>(null);
     const row2Ref = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
-    const ticking = useRef(false);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
             lastScrollY.current = window.scrollY;
 
-            if (!ticking.current) {
-                ticking.current = true;
+            if (!ticking) {
+                ticking = true;
                 requestAnimationFrame(() => {
                     if (row1Ref.current && row2Ref.current) {
                         row1Ref.current.style.transform = `translateX(${lastScrollY.current * -0.1}px)`;
                         row2Ref.current.style.transform = `translateX(${lastScrollY.current * 0.1}px)`;
                     }
-                    ticking.current = false;
+                    ticking = false;
                 });
             }
         };
