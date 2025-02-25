@@ -373,6 +373,7 @@ header {
   cursor: pointer;
   line-height: 1em;
   margin-top: -5px;
+  padding: 0;
 
   @include media-breakpoint-down(md) {
     display: block;

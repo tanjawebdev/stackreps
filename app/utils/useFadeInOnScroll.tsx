@@ -16,7 +16,7 @@ const useFadeInOnScroll = (desktopDelay = 0, mobileDelay = 0) => {
                     entry.target.classList.remove("visible");
                 }
             },
-            { threshold: 0.4 }
+            { threshold: 0.3 }
         );
 
         if (ref.current) {

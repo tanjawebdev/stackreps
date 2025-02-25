@@ -10,6 +10,7 @@ export default function ScreenMarquee() {
     const row2Ref = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
 
+
     useEffect(() => {
         let ticking = false;
         const handleScroll = () => {

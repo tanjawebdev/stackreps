@@ -2,10 +2,12 @@
 
 import styles from "../styles/IntroAnimation.module.scss";
 import React, { useEffect, useRef } from "react";
+import useScreenSize from "../utils/useScreenSize";
 
 export default function IntroAnimation() {
     const scrollY = useRef(0);
     const splineViewerRef = useRef<HTMLDivElement | null>(null); // Ref for the spline viewer
+    const isMobile = useScreenSize();
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -21,6 +23,8 @@ export default function IntroAnimation() {
     useEffect(() => {
         const handleScroll = () => {
             scrollY.current = window.scrollY;
+            const zoomFactor = isMobile ? 0.3 : 0;
+
             if (!splineViewerRef.current) return;
 
             // Get the spline-viewer element
@@ -34,9 +38,11 @@ export default function IntroAnimation() {
 
                 // Select the <canvas> inside shadowRoot
                 const canvas = shadowRoot.querySelector("canvas");
+                console.log(zoomFactor);
+
                 if (canvas) {
                     // Apply transform styles
-                    canvas.style.transform = `scale(${1 + scrollY.current * 0.0003}) translateY(${-scrollY.current * 0.1}px)`;
+                    canvas.style.transform = `scale(${1 + scrollY.current * 0.0003 + zoomFactor}) translateY(${-scrollY.current * 0.1}px)`;
                 }
 
                 const logo = shadowRoot.querySelector("#logo");
@@ -57,7 +63,7 @@ export default function IntroAnimation() {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isMobile]);
 
     return (
         <section className={styles.introAnimation + " container-fluid"}>
