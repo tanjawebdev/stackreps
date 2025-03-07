@@ -25,8 +25,12 @@ const PriceCard = forwardRef<HTMLDivElement, PriceCardProps>(
             <div className={styles.priceDescription}>{children}</div>
 
             <p className={styles.pricecontainer}>
-                <span className={styles.euro}>€</span>
-                <span className={styles.price}>{price ? price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "--"}</span>
+                {price !== 0 && <span className={styles.euro}>€</span>}
+                <span className={styles.price}>
+                    {price === 0 
+                        ? "Gratis" 
+                        : price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </span>
                 {monthly ? <span className={styles.monthly}><span>/ Monat</span></span> : ""}
             </p>
             <Button className={styles.button} href={link} variant={highlight ? "light" : "outline-light"} icon="arrow" size="sm">{linktext}</Button>

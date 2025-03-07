@@ -20,56 +20,56 @@ export default function Prices() {
               </div>
           </div>
               <div className={styles.pricesGrid + " grid"}>
-                  <PriceCard
-                      headline="Lernmaterialien Klein"
-                      price={1.99}
+              <PriceCard
+                      headline="Starterpack"
+                      price={0}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["100 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
-                      highlight={false}
-                      ref={refPrice1}
-                  >
-                      <p>
-                          Erhalte <strong>100 automatisch generierte Lernkarten</strong> inklusive passender
-                          Multiple-Choice-Fragen
-                          zu deinen hochgeladenen Dokumenten.<br/>
-                          <small>Das Produkt kann mehrfach gekauft werden.</small>
-                      </p>
-                  </PriceCard>
-                  <PriceCard
-                      headline="Lernmaterialien Groß"
-                      price={14.99}
-                      link="https://study.stackreps.com/"
-                      linktext="Produkt kaufen"
-                      points={["1.000 Lernkarten", "Multiple-Choice-Fragen inklusive"]}
+                      points={["+ 100 Credits nach authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
                       discount={25}
                       highlight={true}
                       ref={refPrice2}
                   >
                       <p>
-                          Erhalte <strong>1.000 automatisch generierte Lernkarten</strong> inklusive passender
-                          Multiple-Choice-Fragen
-                          zu deinen hochgeladenen Dokumenten. <br/>
-                          <small>Das Produkt kann mehrfach gekauft werden.</small>
+                          Erhalte <strong> 25 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+
                       </p>
                   </PriceCard>
                   <PriceCard
-                      headline="Studenten Abo"
-                      price={8.99}
+                      headline="Studypack S"
+                      price={1.99}
                       link="https://study.stackreps.com/"
-                      linktext="Plan abonnieren"
-                      points={["500 Lernkarten", "Multiple-Choice-Fragen inklusive", "10 Buchkapitel"]}
-                      discount={55}
+                      linktext="Produkt kaufen"
+                      points={["100 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
                       highlight={false}
-                      monthly={true}
+                      ref={refPrice1}
+                  >
+                      <p>
+                      Erhalte <strong> 100 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+                          <small>Dieses Produkt kann mehrmals erworben werden.</small>
+                      </p>
+                  </PriceCard>
+
+                  <PriceCard
+                      headline="Studypack M"
+                      price={14.99}
+                      link="https://study.stackreps.com/"
+                      linktext="Produkt kaufen"
+                      points={["1000 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
+                      discount={25}
+                      highlight={false}
+                      monthly={false}
                       ref={refPrice3}
                   >
                       <p>
-                          Ein monatliches Abo speziell für Studenten. Enthalten sind <strong>500
-                          Lernkarten</strong> inklusive
-                          passender Multiple-Choice-Fragen und Zugriff auf <strong>10 Buchkapitel</strong>.
+                      Erhalte <strong> 1000 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+                      <small>Dieses Produkt kann mehrmals erworben werden.</small>
                       </p>
                   </PriceCard>
+              </div>
+              
+              <div className={styles.creditNoteContainer}>
+                <small className={styles.creditNote}>*Ein Credit entspricht 1.000 Zeichen (ohne Leerzeichen) aus dem hochgeladenen Dokument. Für diesen Textinhalt werden Lernplan und Lernmaterialien generiert.</small>
               </div>
       </section>
 )

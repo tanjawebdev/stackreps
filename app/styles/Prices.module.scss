@@ -5,3 +5,17 @@
     gap: 1rem;
   }
 }
+
+.creditNoteContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.creditNote {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  max-width: 90%;
+  line-height: 1.4;
+}
