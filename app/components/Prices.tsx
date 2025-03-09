@@ -26,7 +26,6 @@ export default function Prices() {
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
                       points={["+ 100 Credits nach authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
-                      discount={25}
                       highlight={true}
                       ref={refPrice2}
                   >
