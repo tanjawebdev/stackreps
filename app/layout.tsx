@@ -13,15 +13,15 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Stackreps: Mit AI zum Lernerfolg',
+    template: '%s | Mit AI zum Lernerfolg',
   },
-  description: 'This is my portfolio.',
+  description: 'Karteikarten, Tests und der optimale Lernplan angepasst auf deine Prüfung.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Stackreps',
+    description: 'Mit AI zum Lernerfolg',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Stackreps',
     locale: 'de_AT',
     type: 'website',
   },
@@ -36,6 +36,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+    ],
+  }
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
