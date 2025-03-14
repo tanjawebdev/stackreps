@@ -7,7 +7,7 @@ export default function Heading() {
   return (
     <section className={styles.heading + " container"}>
       <span className={styles.summary + " summary"}>
-        Effizient lernen, leicht bestehen
+      Du kannst alles lernen.
       </span>
       <h1>Mit AI zum Lernerfolg</h1>
       <p className={styles.subtitle + " subtitle"}>
@@ -15,7 +15,7 @@ export default function Heading() {
       </p>
       <div className={styles.headingButtons}>
         <Button href="https://study.stackreps.com/" variant="light" className={styles.register} size="lg">Kostenlos Registrieren</Button>
-        <Button onClick={() => scrollToSection("features")} variant="outline-light" className="howto" size="lg">So funktionierts</Button>
+        <Button onClick={() => scrollToSection("features")} variant="outline-light" className="howto" size="lg">So funktioniert’s</Button>
 
       </div>
     </section>
