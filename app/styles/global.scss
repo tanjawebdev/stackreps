@@ -250,6 +250,14 @@ section {
   position: relative;
 }
 
+section.subpage {
+  margin-top: 7rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 10rem;
+  }
+}
+
 /* Spots */
 .spot {
   position: absolute;

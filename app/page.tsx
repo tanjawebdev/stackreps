@@ -1,4 +1,3 @@
-import { BlogPosts } from 'app/components/posts'
 import Heading from "./components/heading";
 import IntroAnimation from "./components/introanimation";
 import IntroText from "./components/introText";
