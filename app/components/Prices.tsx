@@ -13,10 +13,6 @@ export default function Prices() {
           <div className="grid">
               <div className="title g-col-12 g-col-lg-7 g-col-xl-5">
                   <h2>Preise und Abos</h2>
-                  <p>
-                      Wähle das passende Paket für deine Lernziele: Ob kleine Lernhilfen, umfangreiches Material oder
-                      ein flexibles Abo – wir haben ein Angebot für dich.
-                  </p>
               </div>
           </div>
               <div className={styles.pricesGrid + " grid"}>
@@ -25,7 +21,7 @@ export default function Prices() {
                       price={0}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["+ 100 Credits nach authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
+                      points={["+ 100 Credits nach Authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
                       highlight={true}
                       ref={refPrice2}
                   >
@@ -39,7 +35,7 @@ export default function Prices() {
                       price={1.99}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["100 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
+                      points={["100 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
                       highlight={false}
                       ref={refPrice1}
                   >
@@ -54,7 +50,7 @@ export default function Prices() {
                       price={14.99}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["1000 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Fragen", "Inkl. Zusammenfassungen"]}
+                      points={["1000 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Testsn", "Inkl. Zusammenfassungen"]}
                       discount={25}
                       highlight={false}
                       monthly={false}
@@ -68,7 +64,7 @@ export default function Prices() {
               </div>
               
               <div className={styles.creditNoteContainer}>
-                <small className={styles.creditNote}>*Ein Credit entspricht 1.000 Zeichen (ohne Leerzeichen) aus dem hochgeladenen Dokument. Für diesen Textinhalt werden Lernplan und Lernmaterialien generiert.</small>
+                <small className={styles.creditNote}>*Ein Credit entspricht 1.000 Zeichen (ohne Leerzeichen) aus dem hochgeladenen Dokument. Pro Seite werden mindestens 2 Credits verrechnet. <br/> Für diesen Textinhalt werden Lernplan und Lernmaterialien generiert.</small>
               </div>
       </section>
 )

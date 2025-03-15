@@ -9,8 +9,7 @@ export default function Footer() {
           <LogoSvg/>
         </div>
         <div className="footer-top">
-          <span className="h1">Effizient lernen, <br/>
-            leicht bestehen</span>
+          <span className="h1">Du kannst alles lernen.</span>
 
           <FooterNav/>
         </div>
