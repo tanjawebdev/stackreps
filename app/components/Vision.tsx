@@ -4,12 +4,10 @@ export default function Vision() {
   return (
       <section className="vision container">
         <span className={"summary"}>
-          Unsere Vision: Lernen neu definieren
+          Wir glauben an dich
         </span>
           <p className="description">
-            Bei Stackreps glauben wir daran, dass Lernen nicht nur effektiv, sondern auch effizient und für alle zugänglich sein sollte. Unsere Mission ist es, das Lernen für Studierende, Schüler und alle Wissbegierigen zu revolutionieren. 
-            <br/><br/>
-            Dank unserer innovativen Algorithmen, die auf der Spaced-Repetition-Methode basieren, sparst du nicht nur Zeit, sondern maximierst auch deinen Lernerfolg. Denn mit unseren intelligenten Lernplänen und KI-generierten Lernmaterialien kannst du dich voll und ganz auf das konzentrieren, was wirklich zählt: das Lernen.
+            Wir glauben daran, dass du alles lernen kannst. Mit den richtigen Lernmethoden und dem richtigen Zeitplan lernst du effizienter und findest wieder Freude daran, dir neue Materien anzueignen. Stackreps ermöglicht es dir, Lernmethoden wie Spaced-Repetition und Active-Recall ohne Aufwand zu nutzen, damit deinen Zielen nichts mehr im Weg steht.
           </p>
           <div className={styles.sponsors}>
              <span className={styles.sponsorssummary + " summary"}>
