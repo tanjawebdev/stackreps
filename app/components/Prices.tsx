@@ -21,12 +21,12 @@ export default function Prices() {
                       price={0}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["+ 100 Credits nach Authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
+                      points={["+ 50 Credits nach Authentifizierung", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
                       highlight={true}
                       ref={refPrice2}
                   >
                       <p>
-                          Erhalte <strong> 25 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+                          Erhalte <strong> 10 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
 
                       </p>
                   </PriceCard>
@@ -35,12 +35,12 @@ export default function Prices() {
                       price={1.99}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["100 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
+                      points={["50 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Tests", "Inkl. Zusammenfassungen"]}
                       highlight={false}
                       ref={refPrice1}
                   >
                       <p>
-                      Erhalte <strong> 100 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+                      Erhalte <strong> 50 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
                           <small>Dieses Produkt kann mehrmals erworben werden.</small>
                       </p>
                   </PriceCard>
@@ -50,21 +50,21 @@ export default function Prices() {
                       price={14.99}
                       link="https://study.stackreps.com/"
                       linktext="Produkt kaufen"
-                      points={["1000 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Testsn", "Inkl. Zusammenfassungen"]}
+                      points={["500 Credits", "Für Lernpläne zu beliebigen Dokumenten", "Inkl. Lernkarten", "Inkl. Multiple-Choice-Testsn", "Inkl. Zusammenfassungen"]}
                       discount={25}
                       highlight={false}
                       monthly={false}
                       ref={refPrice3}
                   >
                       <p>
-                      Erhalte <strong> 1000 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
+                      Erhalte <strong> 500 Credits</strong>* zum automatischen Erstellen von Lernplänen samt zugehörigen Lernmaterialien (Lernkarten, Multiple-Choice-Fragen, Zusammenfassungen etc.) für beliebige Dokumente. <br/>
                       <small>Dieses Produkt kann mehrmals erworben werden.</small>
                       </p>
                   </PriceCard>
               </div>
               
               <div className={styles.creditNoteContainer}>
-                <small className={styles.creditNote}>*Ein Credit entspricht 1.000 Zeichen (ohne Leerzeichen) aus dem hochgeladenen Dokument. Pro Seite werden mindestens 2 Credits verrechnet. <br/> Für diesen Textinhalt werden Lernplan und Lernmaterialien generiert.</small>
+                <small className={styles.creditNote}>*Ein Credit entspricht einer Seite aus dem hochgeladenen Dokument. Für den Inhalt der Seite werden Lernplan und Lernmaterialien generiert.</small>
               </div>
       </section>
 )
