@@ -4,7 +4,7 @@ const navItems = {
   '/agb': {
     name: 'AGB',
   },
-  '/dsgvo': {
+  '/datenschutz': {
     name: 'Datenschutz',
   },
   '/impressum': {
