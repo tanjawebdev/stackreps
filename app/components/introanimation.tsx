@@ -41,7 +41,7 @@ export default function IntroAnimation() {
                     if (canvasRef.current) {
                         canvasRef.current.style.minHeight = "50vw";
                     }
-                }, 100);
+                }, 200);
             }
 
             const logoElement = shadowRoot.querySelector("#logo") as HTMLElement;
@@ -57,7 +57,9 @@ export default function IntroAnimation() {
         });
 
         const handleLoadComplete = (event: CustomEvent) => {
-            setIsCanvasReady(true);
+            setTimeout(() => {
+                setIsCanvasReady(true);
+            }, 200);
         }
         splineViewer.addEventListener("load-complete", handleLoadComplete);
 
@@ -125,7 +127,7 @@ export default function IntroAnimation() {
                     React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode",
                     "events-target": "global",
-                     "style": {minHeight: '50vw'},
+                     "style": {height: '50vw'},
                      "unloadable": "true"
                     })
                 }
