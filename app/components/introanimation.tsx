@@ -125,6 +125,7 @@ export default function IntroAnimation() {
                     React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode",
                     "events-target": "global",
+                     "style": {minHeight: '50vw'},
                      "unloadable": "true"
                     })
                 }

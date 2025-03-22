@@ -16,6 +16,7 @@
   filter: hue-rotate(2deg) saturate(130%) brightness(1.3);
   opacity: 0;
   transition: opacity 0.5s ease;
+  min-height: 50vw;
 }
 
 .cardAnimation.open {
