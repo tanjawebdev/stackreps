@@ -10,9 +10,9 @@ export default function IntroAnimation() {
     const splineViewerRef = useRef<HTMLDivElement | null>(null);
     const isMobile = useScreenSize();
     const [isVisible, setIsVisible] = useState(false);
-
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const logoRef = useRef<HTMLElement | null>(null);
+    const [isCanvasReady, setIsCanvasReady] = useState(false);
 
     const handleScroll = () => {
         scrollY.current = window.scrollY;
@@ -55,6 +55,15 @@ export default function IntroAnimation() {
                 logoElement.onmouseout = () => (logoElement.style.right = "-112px");
             }
         });
+
+        const handleLoadComplete = (event: CustomEvent) => {
+            setIsCanvasReady(true);
+        }
+        splineViewer.addEventListener("load-complete", handleLoadComplete);
+
+        return () => {
+            splineViewer.removeEventListener("load-complete", handleLoadComplete);
+        };
     };
 
     useEffect(() => {
@@ -70,6 +79,7 @@ export default function IntroAnimation() {
                         setIsVisible(true);
                     } else {
                         setIsVisible(false);
+                        setIsCanvasReady(false);
                     }
                 });
             },
@@ -81,7 +91,7 @@ export default function IntroAnimation() {
         );
 
         if (sectionRef.current) {
-            observer.observe(sectionRef.current); // Observe the parent section
+            observer.observe(sectionRef.current);
         }
 
         const handleScrollThrottled = () => requestAnimationFrame(handleScroll);
@@ -98,8 +108,7 @@ export default function IntroAnimation() {
 
     useEffect(() => {
         if (isVisible) {
-            console.log("get canvas");
-            getCanvas(); // Initialize the Spline viewer when visible
+            getCanvas();
         }
     }, [isVisible]);
 
@@ -110,13 +119,15 @@ export default function IntroAnimation() {
         >
             <div
                 ref={splineViewerRef}
-                className={styles.cardAnimation}
-                style={{ display: isVisible ? 'block' : 'none' }}
+                className={`${styles.cardAnimation} ${isVisible && isCanvasReady ? styles.open : ''}`}
             >
-                {isVisible && React.createElement("spline-viewer", {
+                {isVisible &&
+                    React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode",
-                    "events-target": "global"
-                })}
+                    "events-target": "global",
+                     "unloadable": "true"
+                    })
+                }
             </div>
             <div className={styles.lightspot + " spot"}></div>
         </section>

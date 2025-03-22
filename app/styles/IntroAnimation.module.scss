@@ -14,6 +14,12 @@
 .cardAnimation {
   mix-blend-mode: overlay;
   filter: hue-rotate(2deg) saturate(130%) brightness(1.3);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cardAnimation.open {
+  opacity: 1;
 }
 
 .lightspot {
