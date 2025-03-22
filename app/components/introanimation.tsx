@@ -28,38 +28,39 @@ export default function IntroAnimation() {
         const splineViewer = splineViewerRef.current?.querySelector("spline-viewer");
         if (!splineViewer) return;
 
-        customElements.whenDefined("spline-viewer").then(() => {
-            const shadowRoot = splineViewer.shadowRoot;
-            if (!shadowRoot) return;
-
-            const canvas = shadowRoot.querySelector("canvas") as HTMLCanvasElement;
-            canvasRef.current = canvas;
-            if (canvas) {
-                canvas.style.pointerEvents = "none";
-                setTimeout(() => {
-                    canvas.setAttribute('height', canvas.clientHeight.toString());
-                    if (canvasRef.current) {
-                        canvasRef.current.style.minHeight = "50vw";
-                    }
-                }, 200);
-            }
-
-            const logoElement = shadowRoot.querySelector("#logo") as HTMLElement;
-            if (logoElement) {
-                logoRef.current = logoElement;
-
-                logoElement.style.right = "-112px";
-                logoElement.style.transition = "0.2s ease right";
-
-                logoElement.onmouseover = () => (logoElement.style.right = "0px");
-                logoElement.onmouseout = () => (logoElement.style.right = "-112px");
-            }
-        });
-
         const handleLoadComplete = (event: CustomEvent) => {
+
+            customElements.whenDefined("spline-viewer").then(() => {
+                const shadowRoot = splineViewer.shadowRoot;
+                if (!shadowRoot) return;
+
+                const canvas = shadowRoot.querySelector("canvas") as HTMLCanvasElement;
+                canvasRef.current = canvas;
+                if (canvas) {
+                    canvas.style.pointerEvents = "none";
+                    setTimeout(() => {
+                        canvas.setAttribute('height', canvas.clientHeight.toString());
+                        if (canvasRef.current) {
+                            canvasRef.current.style.minHeight = "50vw";
+                        }
+                    }, 100);
+                }
+
+                const logoElement = shadowRoot.querySelector("#logo") as HTMLElement;
+                if (logoElement) {
+                    logoRef.current = logoElement;
+
+                    logoElement.style.right = "-112px";
+                    logoElement.style.transition = "0.2s ease right";
+
+                    logoElement.onmouseover = () => (logoElement.style.right = "0px");
+                    logoElement.onmouseout = () => (logoElement.style.right = "-112px");
+                }
+            });
+
             setTimeout(() => {
                 setIsCanvasReady(true);
-            }, 200);
+            }, 500);
         }
         splineViewer.addEventListener("load-complete", handleLoadComplete);
 
@@ -127,7 +128,7 @@ export default function IntroAnimation() {
                     React.createElement("spline-viewer", {
                     url: "https://prod.spline.design/Qq0Pcq6S2pPLYNhR/scene.splinecode",
                     "events-target": "global",
-                     "style": {height: '50vw'},
+                     //"style": {height: '50vw'},
                      "unloadable": "true"
                     })
                 }
