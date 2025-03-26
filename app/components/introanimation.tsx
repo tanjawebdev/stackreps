@@ -126,8 +126,7 @@ export default function IntroAnimation() {
             >
                 {isVisible &&
                     React.createElement("spline-viewer", {
-                        url: "https://prod.spline.design/wfLLA98Pjf7HXNa0/scene.splinecode",
-                        "events-target": "global"
+                        url: "https://prod.spline.design/wfLLA98Pjf7HXNa0/scene.splinecode"
                     })
                 }
             </div>
