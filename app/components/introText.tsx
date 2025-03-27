@@ -13,7 +13,7 @@ export default function IntroText() {
          Was ist Stackreps?
        </span>
          <p className="description">
-         Stackreps erstellt dir aus deinen Dokumenten Lernpläne mit Karteikarten, Tests und Zusammenfassungen. Wir berechnen angepasst auf dein Prüfungsdatum den optimalen Zeitpunkt, um die erstellten Unterlagen zu lernen, damit du dir deinen Lernstoff so effizient wie möglich aneignen kannst.
+         Stackreps erstellt dir aus deinen Dokumenten Lernpläne mit Karteikarten, Tests und Zusammenfassungen. Angepasst an dein Prüfungsdatum finden wir den idealen Zeitplan, mit dem du dir deinen Lernstoff so effizient wie möglich aneignen kannst.
          </p>
          <div className="intro-test-buttons">
              <Button href="https://study.stackreps.com/" variant="light" className="register" size="lg">Registrieren</Button>
