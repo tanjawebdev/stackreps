@@ -17,7 +17,7 @@ export default function Page() {
         setIsMacOS(/Mac/i.test(navigator.userAgent));
     }, []);
 
-    const IntroComponent = isMacOS ?  IntroAnimation : IntroAnimationWindows;
+    const IntroComponent = isMacOS ? IntroAnimation : IntroAnimationWindows;
 
 
     return (
