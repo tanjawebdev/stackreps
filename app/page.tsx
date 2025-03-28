@@ -11,11 +11,15 @@ import Prices from "./components/Prices";
 import Vision from "./components/Vision";
 
 export default function Page() {
-    const [isMacOS, setIsMacOS] = useState(false);
+    const [isMacOS, setIsMacOS] = useState<boolean | null>(null);
 
     useEffect(() => {
         setIsMacOS(/Mac/i.test(navigator.userAgent));
     }, []);
+
+    if (isMacOS === null) {
+        return null;
+    }
 
     const IntroComponent = isMacOS ? IntroAnimation : IntroAnimationWindows;
 
