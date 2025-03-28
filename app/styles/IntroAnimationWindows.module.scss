@@ -1,0 +1,14 @@
+@import "bootstrap-includes";
+
+.lightspot {
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 150vh;
+  transform: translate(-50%, -35%);
+
+  @include media-breakpoint-down(md) {
+    top: 10%;
+    height: 100vh;
+  }
+}
