@@ -60,7 +60,7 @@ export default function IntroAnimation() {
 
             setTimeout(() => {
                 setIsCanvasReady(true);
-            }, 500);
+            }, 300);
         }
         splineViewer.addEventListener("load-complete", handleLoadComplete);
 
