@@ -9,9 +9,11 @@ import HowToSections from "./components/howToSections";
 import CtaSection from "./components/CtaSection";
 import Prices from "./components/Prices";
 import Vision from "./components/Vision";
+import useScreenSize from "./utils/useScreenSize";
 
 export default function Page() {
     const [isMacOS, setIsMacOS] = useState<boolean | null>(null);
+    const isMobile = useScreenSize();
 
     useEffect(() => {
         setIsMacOS(/Mac/i.test(navigator.userAgent));
@@ -21,7 +23,7 @@ export default function Page() {
         return null;
     }
 
-    const IntroComponent = isMacOS ? IntroAnimation : IntroAnimationWindows;
+    const IntroComponent = isMobile || !isMacOS ? IntroAnimationWindows : IntroAnimation;
 
 
     return (

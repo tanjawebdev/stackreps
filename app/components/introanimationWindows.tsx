@@ -10,7 +10,7 @@ export default function IntroAnimationWindows() {
 
     const applyTransform = () => {
         if (cardsRef.current) {
-            cardsRef.current.style.transform = `scale(${1 + scrollY.current * 0.0003}) rotateY(${rotationY}deg) translateY(${-scrollY.current * 0.1}px)`;
+            cardsRef.current.style.transform = `scale(${1 + scrollY.current * 0.0003}) rotateX(-${scrollY.current * 0.01}deg) rotateY(${rotationY}deg) translateY(${-scrollY.current * 0.1}px)`;
         }
     };
 
