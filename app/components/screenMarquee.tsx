@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import styles from "../styles/ScreenMarquee.module.scss";
 
-const images = Array.from({ length: 8 }, (_, i) => `/images/marquee/image${i + 1}.png`);
+const images = Array.from({ length: 8 }, (_, i) => `/images/marquee/image${i + 1}.jpeg`);
 
 export default function ScreenMarquee() {
     const row1Ref = useRef<HTMLDivElement>(null);
